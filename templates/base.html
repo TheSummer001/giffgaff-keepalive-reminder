@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ app_name }}</title>
+  <style>
+    :root { color-scheme: light; --ink:#18221c; --muted:#66736b;
+      --green:#15603b; --pale:#edf7f1; --line:#d9e2dc; --warn:#9a5a08; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#f4f6f4; color:var(--ink);
+      font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { width:min(760px,calc(100% - 28px)); margin:36px auto; }
+    .brand { font-size:13px; color:var(--green); letter-spacing:.08em;
+      text-transform:uppercase; margin-bottom:10px; }
+    .card { background:#fff; border:1px solid var(--line); border-radius:16px;
+      padding:24px; margin-bottom:16px; box-shadow:0 8px 28px #203a2910; }
+    h1,h2 { line-height:1.25; margin:0 0 16px; }
+    h1 { font-size:28px; } h2 { font-size:18px; }
+    .metric { font-size:42px; font-weight:750; color:var(--green); line-height:1; }
+    .muted { color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .tile { background:var(--pale); border-radius:12px; padding:14px; }
+    .tile strong { display:block; font-size:17px; margin-top:3px; }
+    button,.button { appearance:none; border:0; border-radius:9px;
+      padding:11px 16px; background:var(--green); color:#fff;
+      font-weight:650; cursor:pointer; text-decoration:none; display:inline-block; }
+    button.secondary { background:#e9eee9; color:var(--ink); }
+    input { width:100%; border:1px solid #b8c5bc; border-radius:9px;
+      padding:11px 12px; font:inherit; margin:6px 0 16px; }
+    label { font-weight:650; }
+    table { width:100%; border-collapse:collapse; font-size:13px; }
+    td,th { padding:9px 7px; border-bottom:1px solid var(--line);
+      text-align:left; vertical-align:top; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    .error { color:#a21d1d; background:#fff0f0; padding:10px; border-radius:8px; }
+    @media(max-width:600px) {
+      main { margin:18px auto; } .card { padding:19px; }
+      .grid { grid-template-columns:1fr; } h1 { font-size:24px; }
+      table { display:block; overflow:auto; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <div class="brand">SIM KEEP-ALIVE</div>
+  {% block content %}{% endblock %}
+</main>
+</body>
+</html>

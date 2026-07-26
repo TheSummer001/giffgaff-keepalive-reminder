@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>确认已发送短信</h1>
+  <p>请仅在使用 giffgaff 卡向普通号码成功发送 £0.30 短信后确认。</p>
+  <div class="grid">
+    <div class="tile">上次记录<strong>{{ last_sms_date }}</strong></div>
+    <div class="tile">已过去<strong>{{ days_elapsed }} 天</strong></div>
+    <div class="tile">180天节点<strong>{{ deadline_date }}</strong></div>
+  </div>
+  <form method="post">
+    <label for="sent_date">实际发送日期</label>
+    <input id="sent_date" type="date" name="sent_date" value="{{ today }}"
+           min="{{ min_confirm_date }}" max="{{ today }}" required>
+    <button type="submit">确认发送成功并重新计时</button>
+  </form>
+</section>
+{% endblock %}
