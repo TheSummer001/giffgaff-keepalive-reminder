@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>提醒已延后</h1>
+  <p>在 <strong>{{ until.strftime("%Y-%m-%d %H:%M") }}</strong> 之前不会再次提醒。</p>
+</section>
+{% endblock %}
